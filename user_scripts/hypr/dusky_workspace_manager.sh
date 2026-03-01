@@ -22,7 +22,7 @@ declare -r EDIT_DIR="${HYPR_DIR}/edit_here/source"
 declare -r CONFIG_FILE="${EDIT_DIR}/workspace_rules.conf"
 
 declare -r APP_TITLE="Dusky Workspace Manager"
-declare -r APP_VERSION="v4.3.0 (Production)"
+declare -r APP_VERSION="v4.3.0 (debounce_fix)"
 
 # Dimensions & Layout
 declare -ri MAX_DISPLAY_ROWS=14
