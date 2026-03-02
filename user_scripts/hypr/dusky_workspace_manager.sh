@@ -53,9 +53,9 @@ register_items() {
         register_child "ws_${i}" "Persistent"    "\$ws${i}_persistent|bool||||" "false"
         register_child "ws_${i}" "Master Orient" "\$ws${i}_master_orient|cycle||left,right,top,bottom,center||" "left"
         register_child "ws_${i}" "Scroll Dir"    "\$ws${i}_scroll_dir|cycle||right,left,up,down||" "right"
-        register_child "ws_${i}" "Border Size"   "\$ws${i}_bordersize|int||0|10|1" "2"
-        register_child "ws_${i}" "Gaps In"       "\$ws${i}_gapsin|int||0|40|2" "6"
-        register_child "ws_${i}" "Gaps Out"      "\$ws${i}_gapsout|int||0|40|2" "12"
+#        register_child "ws_${i}" "Border Size"   "\$ws${i}_bordersize|int||0|10|1" "2"
+#        register_child "ws_${i}" "Gaps In"       "\$ws${i}_gapsin|int||0|40|2" "6"
+#        register_child "ws_${i}" "Gaps Out"      "\$ws${i}_gapsout|int||0|40|2" "12"
     done
 
     # Tab 2: Smart Gaps & Visuals (Applied when only 1 window is tiled)
@@ -196,10 +196,7 @@ ensure_config_exists() {
                 printf '$ws%d_persistent = false\n' "$i"
                 printf '$ws%d_master_orient = left\n' "$i"
                 printf '$ws%d_scroll_dir = right\n' "$i"
-                printf '$ws%d_bordersize = 2\n' "$i"
-                printf '$ws%d_gapsin = 6\n' "$i"
-                printf '$ws%d_gapsout = 12\n' "$i"
-                printf 'workspace = %d, layout:$ws%d_layout, persistent:$ws%d_persistent, layoutopt:orientation:$ws%d_master_orient, layoutopt:direction:$ws%d_scroll_dir, bordersize:$ws%d_bordersize, gapsin:$ws%d_gapsin, gapsout:$ws%d_gapsout\n\n' "$i" "$i" "$i" "$i" "$i" "$i" "$i" "$i"
+                printf 'workspace = %d, layout:$ws%d_layout, persistent:$ws%d_persistent, layoutopt:orientation:$ws%d_master_orient, layoutopt:direction:$ws%d_scroll_dir\n\n' "$i" "$i" "$i" "$i" "$i"
             done
         } > "${CONFIG_FILE}"
     fi
